@@ -28,9 +28,9 @@ pg.display.set_caption("Tic Tac Toe (made by Vishal)") #(Set the current window 
 # loading the images
 # pg.mixer.music.load('back.mp3')
 # pg.mixer.music.play()
-opening = pg.image.load('tictacopening.jpeg')
-x_img = pg.image.load('x.png')
-o_img = pg.image.load('o.png')
+opening = pg.image.load('images/tictacopening.jpg')
+x_img = pg.image.load('images/x.png')
+o_img = pg.image.load('images/o.png')
 
 # resize the images to a new resolution
 x_img = pg.transform.scale(x_img, (80, 80))
@@ -41,7 +41,7 @@ opening = pg.transform.scale(opening, (width, height + 100))
 
 
 def game_opening():
-    pg.mixer.music.load('Game_Start.mp3')
+    pg.mixer.music.load('sound/Game_Start.mp3')
     pg.mixer.music.play(-1)
     screen.blit(opening, (0, 0)) #draw one image onto another
     pg.display.update()
@@ -63,11 +63,11 @@ def draw_status():
     if winner is None:
         message = XO.upper() + "'s Turn"
     else:
-        pg.mixer.music.load('winner.mp3')
+        pg.mixer.music.load('sound/winner.mp3')
         pg.mixer.music.play()
         message = winner.upper() + " won!"
     if draw:
-        pg.mixer.music.load('Game_Over.mp3')
+        pg.mixer.music.load('sound/Game_Over.mp3')
         pg.mixer.music.play()
         message = 'Game Draw!'
 
@@ -146,7 +146,7 @@ def drawXO(row, col):
 
 
 def userClick():
-    pg.mixer.music.load('Turn.mp3')
+    pg.mixer.music.load('sound/Turn.mp3')
     pg.mixer.music.play()
 
     # get coordinates of mouse click
